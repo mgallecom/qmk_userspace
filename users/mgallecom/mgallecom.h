@@ -159,7 +159,7 @@ enum {
 
 /* portable keymaps */
 /** 10u **/
-/*** base ***/
+/*** base MAC OS ***/
                         /* ╭────────┬────────┬────────┬────────┬────────╮ */
                         /* │  Q     │  W     │  E     │  R     │  T     │ */
 #define ___5BASE_1_L___     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
@@ -186,6 +186,35 @@ enum {
                         /* ├────────┼────────┼────────┼────────┴────────╯ */
                         /* │Ent/MSE │Spc/NAV │ Del/MED│ */
 #define ___BASE_THUMB_R___  ENT_MSE, SPC_NAV, DEL_MED
+                        /* ╰────────┴────────┴────────╯ */
+
+/*** base Win ***/
+                        /* ╭────────┬────────┬────────┬────────┬────────╮ */
+                        /* │  Q     │  W     │  E     │  R     │  T     │ */
+#define ___5BASEW_1_L___     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
+                        /* ├────────┼────────┼────────┼────────┼────────┤ */
+                        /* │  A/Ctl │  S/Alt │  D/Cmd │  F/Sft │  G     │ */
+#define ___5BASEW_2_L___     A_CTL,   S_ALT,   D_GUI,   F_SFT,   KC_G
+                        /* ├────────┼────────┼────────┼────────┼────────┤ */
+                        /* │ Z/Hypr │  X     │  C     │  V     │  B/Meh │ */
+#define ___5BASEW_3_L___     Z_HYPR,   KC_X,    KC_C,    KC_V,   B_MEH
+                        /* ╰────────┴────────┼────────┼────────┼────────┤ */
+                        /*                   │ Tab/FUN│ BS/NUM │ Esc/MSE│ */
+#define ___BASEW_THUMB_L___                    TAB_FUN, BS_NUM,  ESC_MSE
+                        /*                   ╰────────┴────────┴────────╯ */
+
+                        /* ╭────────┬────────┬────────┬────────┬────────╮ */
+                        /* │  Y     │  U     │  I     │  O     │  P     │ */
+#define ___5BASEW_1_R___     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
+                        /* ├────────┼────────┼────────┼────────┼────────┤ */
+                        /* │  H     │  J/Sft │  K/Cmd │  L/Alt │ ; :/Ctl│ */
+#define ___5BASEW_2_R___     KC_H,    J_SFT,   K_GUI,   L_ALT,   SCLN_CTL
+                        /* ├────────┼────────┼────────┼────────┼────────┤ */
+                        /* │  N/Meh │  M     │  , <   │  . >   │/ ?/Hypr│ */
+#define ___5BASEW_3_R___     N_MEH,   KC_M,    KC_COMM, KC_DOT,  SLS_HYPR
+                        /* ├────────┼────────┼────────┼────────┴────────╯ */
+                        /* │Ent/MSE │Spc/NAV │ Del/MED│ */
+#define ___BASEW_THUMB_R___  ENT_MSE, SPC_NAV, DEL_MED
                         /* ╰────────┴────────┴────────╯ */
 
 /*** number ***/

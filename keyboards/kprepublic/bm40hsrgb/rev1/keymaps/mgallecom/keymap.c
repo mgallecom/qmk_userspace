@@ -27,7 +27,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_CURLIES] = ACTION_TAP_DANCE_DOUBLE( KC_LCBR , KC_RCBR ),
     [TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE( KC_LBRC , KC_RBRC ),
     [TD_BRACKS_NORMAL] = ACTION_TAP_DANCE_DOUBLE( KC_LPRN , KC_RPRN ),
-    [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( G(KC_V) , G(A(KC_V)) ),
+    [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( C(KC_V) , G(KC_V) ),
     [TD_SCREEN] = ACTION_TAP_DANCE_DOUBLE( S(G(KC_4)) , S(G(C(KC_4))) ),
 };
 
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 	[NAV] = LAYOUT_planck_mit(
-		G(KC_S),  TD(TD_ALFRED_PASTE),  G(KC_C),  G(KC_X),  G(KC_Z),   KC_NO,    KC_NO,    G(KC_S),  TD(TD_ALFRED_PASTE),  G(KC_C),  G(KC_X),  G(KC_Z),
+		C(KC_S),  TD(TD_ALFRED_PASTE),  C(KC_C),  C(KC_X),  C(KC_Z),   KC_NO,    KC_NO,    G(KC_S),  TD(TD_ALFRED_PASTE),  G(KC_C),  G(KC_X),  G(KC_Z),
 		KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT,  KC_NO,   KC_NO,    KC_NO,    KC_CAPS,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,
 		KC_NO,    KC_ALGR,  KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,
 		KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,         KC_ENT,   KC_BSPC,  KC_DEL,   KC_NO,    KC_NO
