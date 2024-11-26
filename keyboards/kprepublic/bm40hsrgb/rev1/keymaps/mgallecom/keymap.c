@@ -14,12 +14,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
-
-enum layers { BASE2, MEDIA, NAV, TILNAV, SYM, NUM, FUN };
-
-enum {
-    TD_ALFRED_PASTE, TD_SCREEN, TD_WINDOW_RIGHT, TD_WINDOW_LEFT, TD_CURLIES, TD_BRACKS, TD_BRACKS_NORMAL
-};
+#include mgallecom.h
 
 tap_dance_action_t tap_dance_actions[] = {
     [TD_WINDOW_LEFT] = ACTION_TAP_DANCE_DOUBLE( A(G(KC_LEFT)) , G(A(C(KC_LEFT))) ),
@@ -71,10 +66,10 @@ void set_color(int r, int g, int b){
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[BASE2] = LAYOUT_planck_mit(
-		KC_Q,           KC_W,          KC_E,               KC_R,             KC_T,               TG(BASE2),  KC_NO,  KC_Y,             KC_U,              KC_I,             KC_O,            KC_P,
-		LCTL_T(KC_A),   LALT_T(KC_S),  LGUI_T(KC_D),       LSFT_T(KC_F),     KC_G,               KC_NO,      KC_NO,  KC_H,             RSFT_T(KC_J),      LGUI_T(KC_K),     LALT_T(KC_L),    LCTL_T(KC_QUOT),
-		KC_Z,           KC_X,          KC_C,               KC_V,             KC_B,               KC_NO,      KC_NO,  KC_N,             KC_M,              KC_COMM,          KC_DOT,          KC_SLSH,
-		TD(TD_SCREEN),  KC_NO,  LT(MEDIA, KC_ESC),  LT(NAV, KC_SPC),  LT(TILNAV, KC_TAB),        A(KC_SPC),        LT(SYM, KC_ENT),  LT(NUM, KC_BSPC),  LT(FUN, KC_DEL),  TD(TD_WINDOW_LEFT),           TD(TD_WINDOW_RIGHT)
+		___5BASE_1_L___,                        TG(BASE2),  KC_NO,                                          ___5BASE_1_R___,
+		___5BASE_2_L___,                        KC_NO,      KC_NO,                                          ___5BASE_2_R___,
+		___5BASE_3_L___,                        KC_NO,      KC_NO,                                          ___5BASE_3_R___,
+		TD(TD_SCREEN),  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  TD(TD_WINDOW_LEFT), TD(TD_WINDOW_RIGHT)
 	),
 
 	[MEDIA] = LAYOUT_planck_mit(
