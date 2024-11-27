@@ -47,7 +47,7 @@ enum custom_keycodes {
 // Tap Dance declarations
 enum {
     TD_ALFRED_PASTE,
-    TD_SCREEN, TD_CURLIES,
+    TD_CURLIES,
     TD_BRACKS,
     TD_BRACKS_NORMAL
 };

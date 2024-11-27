@@ -17,13 +17,10 @@
 #include "mgallecom.h"
 
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_WINDOW_LEFT] = ACTION_TAP_DANCE_DOUBLE( A(G(KC_LEFT)) , G(A(C(KC_LEFT))) ),
-    [TD_WINDOW_RIGHT] = ACTION_TAP_DANCE_DOUBLE( A(G(KC_RIGHT)) , G(A(C(KC_RIGHT))) ),
     [TD_CURLIES] = ACTION_TAP_DANCE_DOUBLE( KC_LCBR , KC_RCBR ),
     [TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE( KC_LBRC , KC_RBRC ),
     [TD_BRACKS_NORMAL] = ACTION_TAP_DANCE_DOUBLE( KC_LPRN , KC_RPRN ),
     [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( C(KC_V) , G(KC_V) ),
-    [TD_SCREEN] = ACTION_TAP_DANCE_DOUBLE( S(G(KC_4)) , S(G(C(KC_4))) ),
 };
 
 void set_color(int r, int g, int b){
@@ -65,53 +62,46 @@ void set_color(int r, int g, int b){
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[BASE2] = LAYOUT_planck_mit(
-		___5BASE_1_L___,                        TG(BASE2),  KC_NO,                                          ___5BASE_1_R___,
-		___5BASE_2_L___,                        KC_NO,      KC_NO,                                          ___5BASE_2_R___,
-		___5BASE_3_L___,                        KC_NO,      KC_NO,                                          ___5BASE_3_R___,
-		TD(TD_SCREEN),  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  TD(TD_WINDOW_LEFT), TD(TD_WINDOW_RIGHT)
+	[_BASE] = LAYOUT_planck_mit(
+		                        ___5BASE_1_L___,    XXXXXXX,    KC_NO,  ___5BASE_1_R___,
+                                ___5BASE_2_L___,    KC_NO,      KC_NO,  ___5BASE_2_R___,
+		                        ___5BASE_3_L___,    KC_NO,      KC_NO,  ___5BASE_3_R___,
+		MG_SCAP,  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  XXXXXXX, XXXXXXX
 	),
 
-	[MEDIA] = LAYOUT_planck_mit(
-		KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_SAI,  RGB_VAI,
-		KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT,  KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT,
-		KC_NO,    KC_ALGR,  KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_BRMD,    KC_BRMU,    KC_NO,
-		KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,         KC_MSTP,  KC_MPLY,  KC_MUTE,  KC_NO,    KC_NO
+	[_MED] = LAYOUT_planck_mit(
+		                    ___5MED_1_L___,   KC_NO,    KC_NO,     ___5MED_1_R___,
+		                    ___5MED_2_L___,   KC_NO,    KC_NO,     ___5MED_2_R___,
+		                    ___5MED_3_L___,   KC_NO,    KC_NO,     ___5MED_3_R___,
+		KC_NO,    KC_NO,    ___MED_THUMB_L___,        KC_NO,         ___MED_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[NAV] = LAYOUT_planck_mit(
-		C(KC_S),  TD(TD_ALFRED_PASTE),  C(KC_C),  C(KC_X),  C(KC_Z),   KC_NO,    KC_NO,    G(KC_S),  TD(TD_ALFRED_PASTE),  G(KC_C),  G(KC_X),  G(KC_Z),
-		KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT,  KC_NO,   KC_NO,    KC_NO,    KC_CAPS,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,
-		KC_NO,    KC_ALGR,  KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,
-		KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,         KC_ENT,   KC_BSPC,  KC_DEL,   KC_NO,    KC_NO
+	[_NAV] = LAYOUT_planck_mit(
+		                    ___5NAV_1_L___,   KC_NO,    KC_NO,     ___5NAV_1_R___,
+		                    ___5NAV_2_L___,   KC_NO,    KC_NO,     ___5NAV_2_R___,
+		                    ___5NAV_3_L___,   KC_NO,    KC_NO,     ___5NAV_3_R___,
+		KC_NO,    KC_NO,    ___NAV_THUMB_L___,        KC_NO,         ___NAV_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[TILNAV] = LAYOUT_planck_mit(
-		G(KC_S),  TD(TD_ALFRED_PASTE),  G(KC_C),  G(KC_X),  G(KC_Z),KC_NO,   KC_NO,    KC_NO,  KC_NO,  A(KC_F19),  A(KC_F18),  A(KC_F17),
-		KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT,  KC_NO,   KC_NO,    KC_NO,    KC_NO,    A(KC_F16),  A(KC_F15),  A(KC_F14),  A(KC_F13),
-		KC_NO,    KC_ALGR,  KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,
-		KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,         KC_BTN1,  KC_BTN3,  KC_BTN2,  KC_NO,    KC_NO
+	[_SYM] = LAYOUT_planck_mit(
+		                    ___5SYM_1_L___,   KC_NO,    KC_NO,     ___5SYM_1_R___,
+		                    ___5SYM_2_L___,   KC_NO,    KC_NO,     ___5SYM_2_R___,
+		                    ___5SYM_3_L___,   KC_NO,    KC_NO,     ___5SYM_3_R___,
+		KC_NO,    KC_NO,    ___SYM_THUMB_L___,        KC_NO,         ___SYM_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[SYM] = LAYOUT_planck_mit(
-		KC_PIPE,  KC_AMPR,  KC_ASTR,  KC_BSLS,  TD(TD_BRACKS),   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_BSPC,
-		KC_COLN,  KC_DLR,   KC_PERC,  KC_CIRC,  TD(TD_BRACKS_NORMAL),   KC_NO,    KC_NO,    KC_NO,    KC_LSFT,  KC_LGUI,  KC_LALT,  KC_LCTL,
-		KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  TD(TD_CURLIES),   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_ALGR,  KC_NO,
-		KC_NO,    KC_NO,    KC_SCLN,  KC_PMNS,  KC_UNDS,        KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
+	[_NUM] = LAYOUT_planck_mit(
+		                    ___5NUM_1_L___,   KC_NO,    KC_NO,     ___5NUM_1_R___,
+		                    ___5NUM_2_L___,   KC_NO,    KC_NO,     ___5NUM_2_R___,
+		                    ___5NUM_3_L___,   KC_NO,    KC_NO,     ___5NUM_3_R___,
+		KC_NO,    KC_NO,    ___NUM_THUMB_L___,        KC_NO,         ___NUM_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[NUM] = LAYOUT_planck_mit(
-		KC_EQL,  KC_7,   KC_8,    KC_9,  KC_PAST,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_BSPC,
-		KC_COLN,  KC_4,   KC_5,    KC_6,  KC_PMNS,    KC_NO,    KC_NO,    KC_NO,    KC_LSFT,  KC_LGUI,  KC_LALT,  KC_LCTL,
-		KC_SLSH,   KC_1,   KC_2,    KC_3,  KC_PPLS,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_ALGR,  KC_NO,
-		KC_NO,    KC_NO,  KC_DOT,  KC_0,  KC_COMM,        KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
-	),
-
-	[FUN] = LAYOUT_planck_mit(
-		KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    QK_BOOT,
-		KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_LSFT,  KC_LGUI,  KC_LALT,  KC_LCTL,
-		KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_ALGR,  KC_NO,
-		KC_NO,   KC_NO,   KC_APP,  KC_SPC,  KC_TAB,         KC_NO,         KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
+	[_FUN] = LAYOUT_planck_mit(
+		                    ___5FUN_1_L___,   KC_NO,    KC_NO,     ___5FUN_1_R___,
+		                    ___5FUN_2_L___,   KC_NO,    KC_NO,     ___5FUN_2_R___,
+		                    ___5FUN_3_L___,   KC_NO,    KC_NO,     ___5FUN_3_R___,
+		KC_NO,    KC_NO,    ___FUN_THUMB_L___,        KC_NO,         ___FUN_THUMB_R___,  KC_NO,    KC_NO
 	)
 
 };
