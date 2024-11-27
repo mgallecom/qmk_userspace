@@ -56,9 +56,9 @@ bool dizave_process_record_user(uint16_t keycode, keyrecord_t *record)
     case MG_WIN:
       if (record->event.pressed) {
         if (is_mac()) {
-            dizave_set_win_mode();
+            mgallecom_set_win_mode();
         } else {
-            dizave_set_mac_mode();
+            mgallecom_set_mac_mode();
         }
         // save mode into eeprom
         eeconfig_update_keymap(keymap_config.raw);
