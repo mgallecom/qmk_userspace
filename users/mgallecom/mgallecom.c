@@ -47,4 +47,77 @@ void mgallecom_set_win_mode(void) {
 void mgallecom_set_mac_mode(void) {
   keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = true;
   set_unicode_input_mode(UNICODE_MODE_MACOS);
+ }
+
+bool dizave_process_record_user(uint16_t keycode, keyrecord_t *record)
+{
+  switch(keycode) {
+
+    case MG_WIN:
+      if (record->event.pressed) {
+        if (is_mac()) {
+            dizave_set_win_mode();
+        } else {
+            dizave_set_mac_mode();
+        }
+        // save mode into eeprom
+        eeconfig_update_keymap(keymap_config.raw);
+      }
+      return false;
+
+
+    // mac - command shift 4
+    // win - gui shift S
+    case MG_SCAP:
+      if (is_mac()) {
+        SEND_STRING(SS_LGUI("$"));
+      } else {
+        SEND_STRING(SS_LGUI("S"));
+      }
+      return false;
+
+      case WLEFT:
+      if (record->event.pressed) {
+        if (is_mac()) {
+          SEND_STRING(SS_LALT(SS_TAP(X_LEFT)));
+        } else {
+          SEND_STRING(SS_LCTL(SS_TAP(X_LEFT)));
+        }
+      }
+      return false;
+
+      case WRIGHT:
+      if (record->event.pressed) {
+        if (is_mac()) {
+          SEND_STRING(SS_LALT(SS_TAP(X_RIGHT)));
+        } else {
+          SEND_STRING(SS_LCTL(SS_TAP(X_RIGHT)));
+        }
+      }
+      return false;
+
+      case WBSPC:
+      if (record->event.pressed) {
+        if (is_mac()) {
+          SEND_STRING(SS_LALT(SS_TAP(X_BSPC)));
+        } else {
+          SEND_STRING(SS_LCTL(SS_TAP(X_BSPC)));
+        }
+      }
+      return false;
+
+      case WDEL:
+      if (record->event.pressed) {
+        if (is_mac()) {
+          SEND_STRING(SS_LGUI(SS_TAP(X_DEL)));
+        } else {
+          SEND_STRING(SS_LCTL(SS_TAP(X_DEL)));
+        }
+      }
+      return false;
+
+  }  // switch
+
+
+  return true;
 }

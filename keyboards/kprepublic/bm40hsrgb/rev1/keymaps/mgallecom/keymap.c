@@ -62,42 +62,42 @@ void set_color(int r, int g, int b){
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[_BASE] = LAYOUT_planck_mit(
+	[_BASE] = LAYOUT_mgallecom_planck_mit(
 		                        ___5BASE_1_L___,    XXXXXXX,    KC_NO,  ___5BASE_1_R___,
                                 ___5BASE_2_L___,    KC_NO,      KC_NO,  ___5BASE_2_R___,
 		                        ___5BASE_3_L___,    KC_NO,      KC_NO,  ___5BASE_3_R___,
 		MG_SCAP,  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  XXXXXXX, XXXXXXX
 	),
 
-	[_MED] = LAYOUT_planck_mit(
+	[_MED] = LAYOUT_mgallecom_planck_mit(
 		                    ___5MED_1_L___,   KC_NO,    KC_NO,     ___5MED_1_R___,
 		                    ___5MED_2_L___,   KC_NO,    KC_NO,     ___5MED_2_R___,
 		                    ___5MED_3_L___,   KC_NO,    KC_NO,     ___5MED_3_R___,
 		KC_NO,    KC_NO,    ___MED_THUMB_L___,        KC_NO,         ___MED_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[_NAV] = LAYOUT_planck_mit(
+	[_NAV] = LAYOUT_mgallecom_planck_mit(
 		                    ___5NAV_1_L___,   KC_NO,    KC_NO,     ___5NAV_1_R___,
 		                    ___5NAV_2_L___,   KC_NO,    KC_NO,     ___5NAV_2_R___,
 		                    ___5NAV_3_L___,   KC_NO,    KC_NO,     ___5NAV_3_R___,
 		KC_NO,    KC_NO,    ___NAV_THUMB_L___,        KC_NO,         ___NAV_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[_SYM] = LAYOUT_planck_mit(
+	[_SYM] = LAYOUT_mgallecom_planck_mit(
 		                    ___5SYM_1_L___,   KC_NO,    KC_NO,     ___5SYM_1_R___,
 		                    ___5SYM_2_L___,   KC_NO,    KC_NO,     ___5SYM_2_R___,
 		                    ___5SYM_3_L___,   KC_NO,    KC_NO,     ___5SYM_3_R___,
 		KC_NO,    KC_NO,    ___SYM_THUMB_L___,        KC_NO,         ___SYM_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[_NUM] = LAYOUT_planck_mit(
+	[_NUM] = LAYOUT_mgallecom_planck_mit(
 		                    ___5NUM_1_L___,   KC_NO,    KC_NO,     ___5NUM_1_R___,
 		                    ___5NUM_2_L___,   KC_NO,    KC_NO,     ___5NUM_2_R___,
 		                    ___5NUM_3_L___,   KC_NO,    KC_NO,     ___5NUM_3_R___,
 		KC_NO,    KC_NO,    ___NUM_THUMB_L___,        KC_NO,         ___NUM_THUMB_R___,  KC_NO,    KC_NO
 	),
 
-	[_FUN] = LAYOUT_planck_mit(
+	[_FUN] = LAYOUT_mgallecom_planck_mit(
 		                    ___5FUN_1_L___,   KC_NO,    KC_NO,     ___5FUN_1_R___,
 		                    ___5FUN_2_L___,   KC_NO,    KC_NO,     ___5FUN_2_R___,
 		                    ___5FUN_3_L___,   KC_NO,    KC_NO,     ___5FUN_3_R___,
