@@ -14,7 +14,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
-#include mgallecom.h
+#include "mgallecom.h"
 
 tap_dance_action_t tap_dance_actions[] = {
     [TD_WINDOW_LEFT] = ACTION_TAP_DANCE_DOUBLE( A(G(KC_LEFT)) , G(A(C(KC_LEFT))) ),
