@@ -1,5 +1,5 @@
 /*
-Copyright 2024 Brian Grant <@btgrant-76>
+Copyright 2024 Manuel Galle
 
 This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "quantum.h"
 
 bool is_mac(void);
-void dizave_set_win_mode(void);
-void dizave_set_mac_mode(void);
+void mgallecom_set_win_mode(void);
+void mgallecom_set_mac_mode(void);
 
 enum layer_names {
   _BASE,
@@ -279,3 +279,4 @@ enum {
 #define ___MED_THUMB_R___   KC_MSTP,  KC_MPLY,  KC_MUTE
                         /* ╰────────┴────────┴────────╯ */
 #define LAYOUT_mgallecom_planck_mit(...)  LAYOUT_planck_mit(__VA_ARGS__)
+#endif

@@ -1,0 +1,1 @@
+SRC += mgallecom.c
