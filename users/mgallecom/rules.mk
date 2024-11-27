@@ -1,1 +1,3 @@
 SRC += mgallecom.c
+OS_DETECTION_ENABLE = YES
+UNICODEMAP_ENABLE = yes
