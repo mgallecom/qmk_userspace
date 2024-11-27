@@ -1,7 +1,6 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["kprepublic/bm40hsrgb/rev1", "mgallecom"],
-        ["crkbd/r2g", "mgallecom"]
+        ["kprepublic/bm40hsrgb/rev1", "mgallecom"]
     ]
 }
