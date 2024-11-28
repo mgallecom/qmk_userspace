@@ -22,6 +22,9 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_BRACKS_NORMAL] = ACTION_TAP_DANCE_DOUBLE( KC_LPRN , KC_RPRN ),
     [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( C(KC_V) , G(KC_V) ),
 };
+const uint32_t unicode_map[] PROGMEM = {
+
+};
 
 void set_color(int r, int g, int b){
 	rgb_matrix_set_color(5,  r, g, b);
