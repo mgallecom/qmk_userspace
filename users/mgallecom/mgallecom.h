@@ -93,7 +93,8 @@ enum {
 #define PASTE LCTL(KC_V)
 #define UNDO LCTL(KC_Z)
 #define SAVE LCTL(KC_S)
-#define CLIPBOARD_W SAVE, PASTE_W, COPY_W, CUT_W, UNDO_W //:Save||Cut||Copy||Paste||Undo
+#define CLIPBOARD_L SAVE, PASTE, COPY, CUT, UNDO //:Save||Cut||Copy||Paste||Undo
+#define CLIPBOARD_R UNDO, CUT, COPY, PASTE, SAVE //:Save||Cut||Copy||Paste||Undo
 
 #ifdef TAP_DANCE_ENABLE
 // Tap Dances
