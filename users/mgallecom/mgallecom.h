@@ -54,6 +54,7 @@ enum {
 
 /* Aliases */
 #define HOLD XXXXXXX //:(hold)
+#define XXXXXXX KC_NO
 
 /** Layer Keys **/
 #define BS_NUM LT(_NUM, KC_BSPC) //:BS/NUM
@@ -152,7 +153,7 @@ enum {
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  = +   │  4     │  5     │  6     │  ' "   │ */
                             // TODO maybe try moving the quote hold to a different key?
-#define ___5NUM_2_R___     HRM_R
+#define ___5NUM_2_R___     XXXXXXX,                             HRM_R
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  \ |   │  1     │  2     │  3     │  ` ~   │ */
 #define ___5NUM_3_R___      HOLD,      HOLD,    HOLD,   KC_ALGR, HOLD
@@ -181,7 +182,7 @@ enum {
 #define ___5SYM_1_R___      KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_BSPC
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  +     │  $     │  %     │  ^     │  "     │ */
-#define ___5SYM_2_R___     HRM_R
+#define ___5SYM_2_R___     XXXXXXX,     HRM_R
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  |     │  !     │  @     │  #     │  ~     │ */
 #define ___5SYM_3_R___      HOLD,      HOLD,    HOLD,   KC_ALGR, HOLD
@@ -196,7 +197,7 @@ enum {
 #define ___5NAV_1_L___      CLIPBOARD_L
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Ctl   │  Alt   │  Cmd   │  Shft  │  ---   │ */
-#define ___5NAV_2_L___      HRM_L                        XXXXXXX
+#define ___5NAV_2_L___      HRM_L,                        XXXXXXX
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  ---   │  ---   │  ---   │  ---   │  ---   │ */
 #define ___5NAV_3_L___      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -239,7 +240,7 @@ enum {
 #define ___5FUN_1_R___       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  ---   │  F4    │  F5    │  F6    │  F11   │ */
-#define ___5FUN_2_R___      HRM_R
+#define ___5FUN_2_R___      XXXXXXX, HRM_R
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  ---   │  F1    │  F2    │  F3    │  F10   │ */
 #define ___5FUN_3_R___      XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX
@@ -254,7 +255,7 @@ enum {
 #define ___5MED_1_L___     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │Button 5│Button 3│Button 1│Button 2│ Wheel D│ */
-#define ___5MED_2_L___      HRM_L // KC_WH_D
+#define ___5MED_2_L___      HRM_L,                              XXXXXXX // KC_WH_D
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Esc   │  Ctl   │  Alt   │  Cmd   │ Shft   │ */
 #define ___5MED_3_L___      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX // TODO how much am I using wheel up/down? If I shifted HRM over to the right, I could put Esc on Z like the default layer
