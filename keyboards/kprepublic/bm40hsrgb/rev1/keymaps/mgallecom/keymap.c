@@ -26,42 +26,6 @@ const uint32_t unicode_map[] PROGMEM = {
 
 };
 
-void set_color(int r, int g, int b){
-	rgb_matrix_set_color(5,  r, g, b);
-	rgb_matrix_set_color(6,  r, g, b);
-	rgb_matrix_set_color(17, r, g, b);
-	rgb_matrix_set_color(18, r, g, b);
-	rgb_matrix_set_color(29, r, g, b);
-	rgb_matrix_set_color(30, r, g, b);
-	rgb_matrix_set_color(41, r, g, b);
-}
-
-// void rgb_matrix_indicators_user(void) {
-
-// 	switch (get_highest_layer(layer_state)) {
-// 		case BASE2:
-// 			set_color(128, 64, 0);
-// 			break;
-// 		case MEDIA:
-// 			set_color(50, 10, 20);
-// 			break;
-// 		case NAV:
-// 			set_color(0, 40, 50);
-// 			break;
-// 		case TILNAV:
-// 			set_color(0, 0, 50);
-// 			break;
-// 		case SYM:
-// 			set_color(0, 50, 1.9);
-// 			break;
-// 		case NUM:
-// 			set_color(10, 0, 50);
-// 			break;
-// 		case FUN:
-// 			set_color(50, 0, 0);
-// 			break;
-// 	}
-// }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
