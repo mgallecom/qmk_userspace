@@ -189,7 +189,7 @@ enum {
 #define ___5SYM_3_R___      HOLD,      HOLD,    HOLD,   KC_ALGR, HOLD
                         /* ├────────┼────────┼────────┼────────┴────────╯ */
                         /* │  _     │  (     │ (hold) │ */
-#define ___SYM_THUMB_R___   KC_UNDS, LPRN_MSE, HOLD
+#define ___SYM_THUMB_R___   KC_UNDS, KC_PMNS, HOLD
                         /* ╰────────┴────────┴────────╯ */
 
 /*** navigation ***/
