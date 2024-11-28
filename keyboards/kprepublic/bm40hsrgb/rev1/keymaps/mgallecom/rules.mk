@@ -1,5 +1,5 @@
 USER_NAME := mgallecom
-MOUSEKEY_ENABLE = yes # Mouse keys
+MOUSEKEY_ENABLE = no # Mouse keys
 EXTRAKEY_ENABLE = yes # Audio control and System control
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 TAP_DANCE_ENABLE = yes
