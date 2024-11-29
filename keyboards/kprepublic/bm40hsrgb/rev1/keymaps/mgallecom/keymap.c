@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		                        ___5BASE_1_L___,    MG_WIN,    KC_NO,  ___5BASE_1_R___,
                                 ___5BASE_2_L___,    KC_NO,      KC_NO,  ___5BASE_2_R___,
 		                        ___5BASE_3_L___,    KC_NO,      KC_NO,  ___5BASE_3_R___,
-		MG_SCAP,  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  XXXXXXX, XXXXXXX
+		MG_SCAP,  KC_NO,  ___BASE_THUMB_L___,   A(KC_SPACE),     ___BASE_THUMB_R___,  XXXXXXX, XXXXXXX
 	),
 
 	[_MED] = LAYOUT_mgallecom_planck_mit(
