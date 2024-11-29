@@ -72,7 +72,7 @@ enum {
 #define J_SFT RSFT_T(KC_J) //:J/Sft
 #define K_CTL RCTL_T(KC_K) //:K/CTL
 #define L_ALT RALT_T(KC_L) //:L/Alt
-#define SCLN_WIN RGUI_T(KC_SCLN) //:;_:/WIN
+#define SCLN_WIN RGUI_T(KC_QUOTE) //:;_:/WIN
 #define HRM_L KC_LGUI, KC_LALT,KC_LCTL, KC_LSFT //:WIN||Opt||Ctl||Sft
 #define HRM_R KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI  //:Sft||Ctl||Opt||WIN
 
