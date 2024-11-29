@@ -73,13 +73,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_NO,    KC_NO,    ___FUN_THUMB_L___,        KC_NO,         ___FUN_THUMB_R___,  KC_NO,    KC_NO
 	)
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
-  switch(keycode) {
+      switch(keycode) {
 
-    default:
-      return mgallecom_process_record_user(keycode, record);
+        default:
+          return mgallecom_process_record_user(keycode, record);
 
-  }
+      }
+      return true;
+    }
+
 };
 
