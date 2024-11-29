@@ -15,13 +15,15 @@
 */
 #include QMK_KEYBOARD_H
 #include "mgallecom.h"
+#include "os_detection.h"
 
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CURLIES] = ACTION_TAP_DANCE_DOUBLE( KC_LCBR , KC_RCBR ),
     [TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE( KC_LBRC , KC_RBRC ),
     [TD_BRACKS_NORMAL] = ACTION_TAP_DANCE_DOUBLE( KC_LPRN , KC_RPRN ),
-    [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( C(KC_V) , G(KC_V) ),
+    [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( C(KC_V) , C(A(KC_V)) ),
 };
+
 const uint32_t unicode_map[] PROGMEM = {
 
 };
@@ -30,7 +32,7 @@ const uint32_t unicode_map[] PROGMEM = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_BASE] = LAYOUT_mgallecom_planck_mit(
-		                        ___5BASE_1_L___,    XXXXXXX,    KC_NO,  ___5BASE_1_R___,
+		                        ___5BASE_1_L___,    MG_WIN,    KC_NO,  ___5BASE_1_R___,
                                 ___5BASE_2_L___,    KC_NO,      KC_NO,  ___5BASE_2_R___,
 		                        ___5BASE_3_L___,    KC_NO,      KC_NO,  ___5BASE_3_R___,
 		MG_SCAP,  KC_NO,  ___BASE_THUMB_L___,   XXXXXXX,     ___BASE_THUMB_R___,  XXXXXXX, XXXXXXX
@@ -71,5 +73,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_NO,    KC_NO,    ___FUN_THUMB_L___,        KC_NO,         ___FUN_THUMB_R___,  KC_NO,    KC_NO
 	)
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+  switch(keycode) {
+
+    default:
+      return mgallecom_process_record_user(keycode, record);
+
+  }
 };
 

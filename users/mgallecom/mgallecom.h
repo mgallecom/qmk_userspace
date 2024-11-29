@@ -52,6 +52,7 @@ enum {
     TD_BRACKS_NORMAL
 };
 
+
 /* Aliases */
 #define HOLD XXXXXXX //:(hold)
 #define XXXXXXX KC_NO
@@ -72,7 +73,7 @@ enum {
 #define J_SFT RSFT_T(KC_J) //:J/Sft
 #define K_CTL RCTL_T(KC_K) //:K/CTL
 #define L_ALT RALT_T(KC_L) //:L/Alt
-#define SCLN_WIN RGUI_T(KC_SCLN) //:;_:/WIN
+#define SCLN_WIN RGUI_T(KC_QUOT) //:;_:/WIN
 #define HRM_L KC_LGUI, KC_LALT,KC_LCTL, KC_LSFT //:WIN||Opt||Ctl||Sft
 #define HRM_R KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI  //:Sft||Ctl||Opt||WIN
 
@@ -90,7 +91,8 @@ enum {
 /*** Shortcuts Win***/
 #define CUT LCTL(KC_X)
 #define COPY LCTL(KC_C)
-#define PASTE LCTL(KC_V)
+#define PASTE TD_ALFRED_PASTE
+#define SAVE LCTL(KC_S)
 #define UNDO LCTL(KC_Z)
 #define SAVE LCTL(KC_S)
 #define CLIPBOARD_L SAVE, PASTE, COPY, CUT, UNDO //:Save||Cut||Copy||Paste||Undo
@@ -209,7 +211,7 @@ enum {
 
                         /* ╭────────┬────────┬────────┬────────┬────────╮ */
                         /* │  Redo  │  Paste │  Copy  │  Cut   │  Undo  │ */
-#define ___5NAV_1_R___      CLIPBOARD_R
+#define ___5NAV_1_R___      XXXXXXX,  WLEFT,   XXXXXXX, XXXXXXX, WRIGHT
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Left  │  Down  │  Up    │  Right │  Caps  │ */
 #define ___5NAV_2_R___      KC_CAPS,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
