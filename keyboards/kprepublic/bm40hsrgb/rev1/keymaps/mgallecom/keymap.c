@@ -73,11 +73,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_NO,    KC_NO,    ___FUN_THUMB_L___,        KC_NO,         ___FUN_THUMB_R___,  KC_NO,    KC_NO
 	)
 
-    bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-
-       return mgallecom_process_record_user(keycode, record);
-
-    }
-
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+    return mgallecom_process_record_user(keycode, record);
+
+}
+
+bool process_detected_host_os_user(os_variant_t os) {
+  if (os==OS_MACOS || os==OS_IOS) {
+    mgallecom_set_mac_mode();
+  } else {
+    mgallecom_set_win_mode();
+  }
+  return true;
+}
 

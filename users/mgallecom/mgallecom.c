@@ -49,7 +49,7 @@ void mgallecom_set_mac_mode(void) {
   set_unicode_input_mode(UNICODE_MODE_MACOS);
  }
 
-bool mgalle_process_record_user(uint16_t keycode, keyrecord_t *record)
+bool mgallecom_process_record_user(uint16_t keycode, keyrecord_t *record)
 {
   switch(keycode) {
 

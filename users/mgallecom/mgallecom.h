@@ -23,6 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 bool is_mac(void);
 void mgallecom_set_win_mode(void);
 void mgallecom_set_mac_mode(void);
+bool mgallecom_process_record_user(uint16_t keycode, keyrecord_t *record);
+
 
 enum layer_names {
   _BASE,
@@ -91,7 +93,7 @@ enum {
 /*** Shortcuts Win***/
 #define CUT LCTL(KC_X)
 #define COPY LCTL(KC_C)
-#define PASTE TD_ALFRED_PASTE
+#define PASTE TD(TD_ALFRED_PASTE)
 #define SAVE LCTL(KC_S)
 #define UNDO LCTL(KC_Z)
 #define SAVE LCTL(KC_S)
