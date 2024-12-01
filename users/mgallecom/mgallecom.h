@@ -222,7 +222,7 @@ enum {
 #define ___5NAV_3_R___      KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END
                         /* ├────────┼────────┼────────┼────────┴────────╯ */
                         /* │  ---   │ (hold) │  ---   │ */
-#define ___NAV_THUMB_R___   KC_ENT,   KC_BSPC,  KC_DEL
+#define ___NAV_THUMB_R___   KC_ENT,   WBSPC,  WDEL
                         /* ╰────────┴────────┴────────╯ */
 
 /*** function ***/
@@ -285,4 +285,5 @@ enum {
 #define ___MED_THUMB_R___   KC_MSTP,  KC_MPLY,  KC_MUTE
                         /* ╰────────┴────────┴────────╯ */
 #define LAYOUT_mgallecom_planck_mit(...)  LAYOUT_planck_mit(__VA_ARGS__)
+#define LAYOUT_mgallecom_split_3x6_3(...) LAYOUT_split_3x6_3(__VA_ARGS__)
 #endif
