@@ -216,7 +216,7 @@ enum {
 #define ___5NAV_1_R___      XXXXXXX,  WLEFT,   XXXXXXX, XXXXXXX, WRIGHT
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Left  │  Down  │  Up    │  Right │  Caps  │ */
-#define ___5NAV_2_R___      KC_CAPS,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
+#define ___5NAV_2_R___      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_CAPS
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Home  │  PgDn  │  PgUp  │  End   │ Ent    │ */
 #define ___5NAV_3_R___      KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END
