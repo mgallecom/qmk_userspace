@@ -27,23 +27,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define FAST_TYPE_WPM 60 //Switch to fast animation when over words per minute
 
 
-enum combos {
-    IO_DASH,
-    KL_COLON,
-    SD_ALF
-};
+#include "combos.h"
+
 const uint32_t unicode_map[] PROGMEM = {
 
-};
-const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM kl_combo[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
-const uint16_t PROGMEM sd_combo[] = {LALT_T(KC_S), LCTL_T(KC_D), COMBO_END};
-const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
-
-combo_t key_combos[] = {
-[IO_DASH] = COMBO(io_combo, KC_MINUS),
-[KL_COLON] = COMBO(kl_combo, KC_SEMICOLON),
-[SD_ALF] = COMBO(sd_combo, A(KC_SPACE))
 };
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -53,21 +40,8 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/*
- * BASE LAYER
-  [_QWERTY] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,----------------------------------------------------.
-    |  hmrw  |   Q    |   W    |   E    |   R    |   T    |      |    Y   |   U    |   I    |   O    |   P    |  Alfr |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    | ------ |   A    |   S    |   D    |   F    |   G    |      |    H   |   J    |   K    |   L    |   '    |  ;    |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    | SftCaps|   Z    |   X    |   C    |   V    |   B    |      |    N   |   M    |   ,    |   .    |   /    | ----- |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |Med/Esc|Nav/Spc|Til/Tab|  |Sym/Ent|Num/Bsp|Fun/Del|
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Layers share the 5-column core defined in users/mgallecom/mgallecom.h; diagrams are in KEYMAPS.md.
+// The outer columns and thumb keys below are Corne-specific.
   [_BASE] = LAYOUT_mgallecom_split_3x6_3(
     XXXXXXX,       ___5BASE_1_L___,           ___5BASE_1_R___, XXXXXXX,
     XXXXXXX,       ___5BASE_2_L___,           ___5BASE_2_R___, XXXXXXX,
@@ -76,21 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
-/*
- * Media LAYER
-  [_MEDIA] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,-----------------------------------------------------.
-    |  BOOT  | ------ | ------ | ------ | ------ | ------ |      | ------ | RGBTOG | RGBMOD | RGBHUI | RGBSAI | RGBVAI |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+------- |
-    | ------ |KC_LCTL |KC_LALT |KC_LGUI |KC_LSFT | ------ |      | ------ |KC_MPRV |KC_VOLD |KC_VOLU |KC_MNXT | ------ |
-  //|------yy--+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------|
-    | ------ |KC_ALGR | ------ | ------ | ------ | ------ |      | ------ | ------ | ------ |KC_BRMD |KC_BRMU | ------ |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |       |       |       |  |KC_MSTP|KC_MPLY|KC_MUTE|
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Media layer (Esc/MED). Outer keys: bootloader (left), OS mode toggle (right).
   [_MED] = LAYOUT_mgallecom_split_3x6_3(
     QK_BOOT,       ___5MED_1_L___,           ___5MED_1_R___, MG_WIN,
     XXXXXXX,       ___5MED_2_L___,           ___5MED_2_R___, XXXXXXX,
@@ -98,21 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 ___MED_THUMB_L___,           ___MED_THUMB_R___
   ),
 
-/*
- * NAVIGATION LAYER
-  [_TPL] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,----------------------------------------------------.
-    | ------ |  Save  |AlfPaste|  Copy  |  Cut   |  Undo  |      |  Save  |AlfPaste|  Copy  |  Cut   |  Undo  | ----- |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    | ------ |KC_LCTL |KC_LALT |KC_LGUI |KC_LSFT | ------ |      |KC_CAPS |KC_LEFT |KC_DOWN |  KC_UP |KC_RGHT | ----- |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    | ------ |KC_ALGR | ------ | ------ | ------ | ------ |      | KC_INS |KC_HOME |KC_PGDN |KC_PGUP | KC_END | ----- |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |       |       |       |  | KC_ENT|KC_BSPC| KC_DEL|
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Navigation layer (Spc/NAV).
   [_NAV] = LAYOUT_mgallecom_split_3x6_3(
     XXXXXXX,       ___5NAV_1_L___,           ___5NAV_1_R___, XXXXXXX,
     XXXXXXX,       ___5NAV_2_L___,           ___5NAV_2_R___, XXXXXXX,
@@ -120,22 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 ___NAV_THUMB_L___,           ___NAV_THUMB_R___
   ),
 
-/*
- * SYMBOL LAYER
- *
-  [_SYM] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,----------------------------------------------------.
-    |        |  PIPE  |   &    |   *    |   \    |   []   |      |        |        |        |        |        |  Bksp |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |    :   |   $    |   %    |   ^    |   ()   |      |        |  SHIFT |   CMD  |   ALT  |  CTRL  |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |   ~    |    !   |   @    |   #    |   {}   |      |        |        |        |        |        |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |   ;   |   -   |   _   |  |       |       |       |
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Symbol layer (SYM thumb). Outer key: backspace (right).
   [_SYM] = LAYOUT_mgallecom_split_3x6_3(
     XXXXXXX,       ___5SYM_1_L___,           ___5SYM_1_R___, KC_BSPC,
     XXXXXXX,       ___5SYM_2_L___,           ___5SYM_2_R___, XXXXXXX,
@@ -144,21 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 
-  /*
- * NUMBER LAYER
-  [_TPL] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,----------------------------------------------------.
-    |        |   =    |   7    |   8    |   9    |   *    |      |        |        |        |        |        |  Bksp |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |   :    |   4    |   5    |   6    |   -    |      |        |  SHIFT |   CMD  |   ALT  |  CTRL  |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |   /    |   1    |   2    |   3    |   +    |      |        |        |        |        |        |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |   .   |   0   |   ,   |  |       |       |       |
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Number layer (BS/NUM). Outer key: backspace (right).
   [_NUM] = LAYOUT_mgallecom_split_3x6_3(
     XXXXXXX,       ___5NUM_1_L___,           ___5NUM_1_R___, KC_BSPC,
     XXXXXXX,       ___5NUM_2_L___,           ___5NUM_2_R___, XXXXXXX,
@@ -168,21 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
-/*
- * FUN LAYER
-  [_TPL] = LAYOUT_wrapper( \
-  //,-----------------------------------------------------.      ,----------------------------------------------------.
-    |        |   F12  |   F7   |   F8   |   F9   |PRNTSCRN|      |        |        |        |        |        |QK_BOOT|
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |   F11  |   F4   |   F5   |   F6   |        |      |        |  SHIFT |   CMD  |   ALT  |  CTRL  |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-    |        |   F10  |   F1   |   F2   |   F3   | PAUSE  |      |        |        |        |        |        |       |
-  //|--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+-------|
-                                    ,-----------------------,  ,-----------------------.
-                                    |  ESC  | SPACE |  TAB  |  |       |       |       |
-                                   /|-------+-------+-------'  +-------+-------+-------|\
-  ),
-*/
+// Function layer (Del/FUN). Outer key: bootloader (right).
   [_FUN] = LAYOUT_mgallecom_split_3x6_3(
     XXXXXXX,       ___5FUN_1_L___,           ___5FUN_1_R___, QK_BOOT,
     XXXXXXX,       ___5FUN_2_L___,           ___5FUN_2_R___, XXXXXXX,

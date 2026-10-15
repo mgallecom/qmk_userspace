@@ -5,7 +5,6 @@ BOOTMAGIC_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 RGBLIGHT_ENABLE = no
 RGB_MATRIX_ENABLE = no
-COMBO_ENABLE = yes
 # bongo cat
 WPM_ENABLE = yes
 # bongo cat

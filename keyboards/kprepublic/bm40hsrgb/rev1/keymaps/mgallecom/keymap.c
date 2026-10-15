@@ -16,11 +16,9 @@
 #include QMK_KEYBOARD_H
 #include "mgallecom.h"
 #include "os_detection.h"
+#include "combos.h"
 
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_CURLIES] = ACTION_TAP_DANCE_DOUBLE( KC_LCBR , KC_RCBR ),
-    [TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE( KC_LBRC , KC_RBRC ),
-    [TD_BRACKS_NORMAL] = ACTION_TAP_DANCE_DOUBLE( KC_LPRN , KC_RPRN ),
     [TD_ALFRED_PASTE] = ACTION_TAP_DANCE_DOUBLE( RCTL(KC_V) , RCTL(A(KC_V)) ),
 };
 
