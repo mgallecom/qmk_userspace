@@ -219,7 +219,7 @@ enum {
 #define ___5NAV_2_R___      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_CAPS
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Home  │  PgDn  │  PgUp  │  End   │ Ent    │ */
-#define ___5NAV_3_R___      KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END
+#define ___5NAV_3_R___      KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_INS
                         /* ├────────┼────────┼────────┼────────┴────────╯ */
                         /* │  ---   │ (hold) │  ---   │ */
 #define ___NAV_THUMB_R___   KC_ENT,   WBSPC,  WDEL
