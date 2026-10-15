@@ -271,7 +271,7 @@ enum {
 
                         /* ╭────────┬────────┬────────┬────────┬────────╮ */
                         /* │  ---   │MEDSpd 0│MEDSpd 1│MEDSpd 2│  ---   │ */
-#define ___5MED_1_R___      RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_SAI,  RGB_VAI
+#define ___5MED_1_R___      RM_TOGG,  RM_NEXT,  RM_HUEU,  RM_SATU,  RM_VALU
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │ Mouse L│ Mouse D│ Mouse U│ Mouse R│  ---   │ */
 #define ___5MED_2_R___      XXXXXXX, KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT
