@@ -61,7 +61,7 @@ bool mgallecom_process_record_user(uint16_t keycode, keyrecord_t *record)
             mgallecom_set_mac_mode();
         }
         // save mode into eeprom
-        eeconfig_update_keymap(keymap_config.raw);
+        eeconfig_update_keymap(&keymap_config);
       }
       return false;
 
