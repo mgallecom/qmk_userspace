@@ -23,19 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 // Every chord is two neighbouring base-layer keys that almost never occur together in German or
 // English words. Shifted partners come from holding Shift while chording:
-//   [ + Shift = {     ] + Shift = }     ; + Shift = :     Enter + Shift = Shift+Enter
+//   ; + Shift = :     Enter + Shift = Shift+Enter
 //
 //   Enter  ,  .   right ring+middle, bottom row
-//   ( )    D F    left index+middle, home row    /  J K  right index+middle, home row
-//   [ ]    C V    left index+middle, bottom row  /  M ,  right index+middle, bottom row
-//   ;      Z X    left pinky+ring, bottom row
+//   ;      Z  X   left pinky+ring, bottom row
 
 enum mg_combos {
     MG_ENTER,
-    MG_LPRN,
-    MG_RPRN,
-    MG_LBRC,
-    MG_RBRC,
     MG_SCLN,
 #ifdef MG_EXTRA_COMBOS
     MG_DASH,
@@ -44,10 +38,6 @@ enum mg_combos {
 };
 
 const uint16_t PROGMEM mg_enter_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM mg_lprn_combo[]  = {D_CTL, F_SFT, COMBO_END};
-const uint16_t PROGMEM mg_rprn_combo[]  = {J_SFT, K_CTL, COMBO_END};
-const uint16_t PROGMEM mg_lbrc_combo[]  = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM mg_rbrc_combo[]  = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM mg_scln_combo[]  = {Z_HYPR, KC_X, COMBO_END};
 #ifdef MG_EXTRA_COMBOS
 const uint16_t PROGMEM mg_dash_combo[]   = {KC_I, KC_O, COMBO_END};
@@ -56,10 +46,6 @@ const uint16_t PROGMEM mg_alfred_combo[] = {S_ALT, D_CTL, COMBO_END};
 
 combo_t key_combos[] = {
     [MG_ENTER] = COMBO(mg_enter_combo, KC_ENT),
-    [MG_LPRN]  = COMBO(mg_lprn_combo, KC_LPRN),
-    [MG_RPRN]  = COMBO(mg_rprn_combo, KC_RPRN),
-    [MG_LBRC]  = COMBO(mg_lbrc_combo, KC_LBRC),
-    [MG_RBRC]  = COMBO(mg_rbrc_combo, KC_RBRC),
     [MG_SCLN]  = COMBO(mg_scln_combo, KC_SCLN),
 #ifdef MG_EXTRA_COMBOS
     [MG_DASH]   = COMBO(mg_dash_combo, KC_MINUS),
@@ -68,7 +54,7 @@ combo_t key_combos[] = {
 };
 
 #ifdef COMBO_MUST_TAP_PER_COMBO
-// Chords containing a mod-tap fire on tap only, so holding D+F still gives Ctrl+Shift.
+// Chords containing a mod-tap fire on tap only, so holding Z still gives Hyper.
 bool get_combo_must_tap(uint16_t combo_index, combo_t *combo) {
     uint16_t key;
     uint8_t  idx = 0;

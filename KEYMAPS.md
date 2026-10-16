@@ -87,8 +87,8 @@ Corne: extra `Bksp` on the right outer column, top row.
                   ╰────────┴────────┴────────╯   ╰────────┴────────┴────────╯
 ```
 
-The brackets are plain keys here (fallback to the combos below), mirrored on the inner columns of both
-hands. Corne: extra `Bksp` on the right outer column, top row.
+The brackets live on the inner columns of both hands, mirrored: opening on the left, closing on the right.
+Corne: extra `Bksp` on the right outer column, top row.
 
 ### Navigation (Spc/NAV)
 
@@ -149,20 +149,14 @@ typing does not trigger them. `COMBO_TERM` is 35 ms.
 | Output | Chord | Fingers | Shifted partner |
 |---|---|---|---|
 | Enter | `,` + `.` | right middle + ring, bottom row | hold Shift (`F`) then chord = Shift+Enter |
-| `(` | `D` + `F` | left middle + index, home row | |
-| `)` | `J` + `K` | right index + middle, home row | |
-| `[` | `C` + `V` | left middle + index, bottom row | hold Shift (`J`) = `{` |
-| `]` | `M` + `,` | right index + middle, bottom row | hold Shift (`F`) = `}` |
 | `;` | `Z` + `X` | left pinky + ring, bottom row | hold Shift (`J`) = `:` |
 
 Corne only: `I` + `O` = `-`, `S` + `D` = Alfred (Alt+Space).
 
 - **Shift:** use the home-row Shift on the *other* hand (it is a mod-tap, so hold it past the 200 ms
   tapping term, same as for capital letters).
-- **Mod-tap chords** (`D`+`F`, `J`+`K`, `Z`+`X`) fire on tap only. Holding them still gives
-  Ctrl+Shift, Shift+Ctrl and Hyper+... as before.
-- **Where it might misfire:** `M` + `,` (word-final "m," like "dem,"), `D` + `F` (compounds like
-  "Handfläche"), `,` + `.` ("e.g.,"). If one bothers you, raise or lower `COMBO_TERM` in
-  `users/mgallecom/config.h`, or move that combo to another pair in `combos.h`.
-- **Fallbacks:** all brackets, `;` and `:` also exist as plain keys on the SYM layer, and Enter is on the
+- **Mod-tap chord** (`Z`+`X`) fires on tap only. Holding it still gives Hyper+X as before.
+- **Where it might misfire:** `,` + `.` ("e.g.,"). If it bothers you, raise or lower `COMBO_TERM` in
+  `users/mgallecom/config.h`, or move the combo to another pair in `combos.h`.
+- **Fallbacks:** `;` and `:` also exist as plain keys on the SYM layer, and Enter is on the
   NAV layer thumb.
