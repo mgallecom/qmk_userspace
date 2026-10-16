@@ -209,11 +209,11 @@ enum {
                         /*                   ╰────────┴────────┴────────╯ */
 
                         /* ╭────────┬────────┬────────┬────────┬────────╮ */
-                        /* │  ---   │ Word ← │  ---   │  ---   │ Word → │ */
-#define ___5NAV_1_R___      XXXXXXX,  WLEFT,   XXXXXXX, XXXXXXX, WRIGHT
+                        /* │ Word ← │  ---   │  ---   │ Word → │  ---   │ */
+#define ___5NAV_1_R___      WLEFT,    XXXXXXX, XXXXXXX, WRIGHT,  XXXXXXX
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
-                        /* │   ←    │   ↓    │   ↑    │   →    │  Caps  │ */
-#define ___5NAV_2_R___      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_CAPS
+                        /* │   ←    │   ↓    │   ↑    │   →    │  ---   │ */
+#define ___5NAV_2_R___      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  XXXXXXX
                         /* ├────────┼────────┼────────┼────────┼────────┤ */
                         /* │  Home  │  PgDn  │  PgUp  │  End   │  Ins   │ */
 #define ___5NAV_3_R___      KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_INS
